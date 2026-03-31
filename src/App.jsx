@@ -1,7 +1,8 @@
-import React from 'react';
-import { Github, Linkedin, Mail, Phone, ExternalLink, ChevronRight, Download, MapPin, Award, Briefcase, GraduationCap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Github, Linkedin, Mail, Phone, ExternalLink, ChevronRight, Download, MapPin, Award, Briefcase, GraduationCap, Menu, X } from 'lucide-react';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const projects = [
     {
       title: "Mental Health Companion",
@@ -120,14 +121,26 @@ function App() {
           <div style={{ fontSize: '1.5rem', fontWeight: 'bold', background: 'linear-gradient(to right, #2563eb, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent', WebkitTextFillColor: 'transparent' }}>
             RS
           </div>
-          <div style={{ display: 'flex', gap: '2rem', fontSize: '0.875rem', fontWeight: '500' }}>
+          <button onClick={() => setMenuOpen(!menuOpen)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: '#475569' }} className="mobile-menu-btn">
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          <div style={{ display: 'flex', gap: '2rem', fontSize: '0.875rem', fontWeight: '500' }} className="nav-links">
             {['about', 'experience', 'projects', 'skills', 'contact'].map((section) => (
-              <a key={section} href={`#${section}`} style={{ color: '#475569', textDecoration: 'none' }} onMouseEnter={(e) => { e.target.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.target.style.color = '#475569'; }}>
+              <a key={section} href={`#${section}`} onClick={() => setMenuOpen(false)} style={{ color: '#475569', textDecoration: 'none' }} onMouseEnter={(e) => { e.target.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.target.style.color = '#475569'; }}>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </a>
             ))}
           </div>
         </div>
+        {menuOpen && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1.5rem', background: 'rgba(255, 255, 255, 0.95)', borderTop: '1px solid rgba(203, 213, 225, 0.5)' }}>
+            {['about', 'experience', 'projects', 'skills', 'contact'].map((section) => (
+              <a key={section} href={`#${section}`} onClick={() => setMenuOpen(false)} style={{ color: '#475569', textDecoration: 'none', fontSize: '1rem' }} onMouseEnter={(e) => { e.target.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.target.style.color = '#475569'; }}>
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       <section id="about" style={{ position: 'relative', paddingTop: '8rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', overflow: 'hidden' }}>
@@ -356,7 +369,70 @@ function App() {
         </div>
       </section>
 
-      <style>{`@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } } @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }`}</style>
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+        
+        @keyframes pulse { 
+          0%, 100% { opacity: 1; } 
+          50% { opacity: 0.5; } 
+        } 
+        @keyframes bounce { 
+          0%, 100% { transform: translateY(0); } 
+          50% { transform: translateY(-10px); } 
+        }
+        
+        @media (max-width: 768px) {
+          .nav-links {
+            display: none !important;
+          }
+          .mobile-menu-btn {
+            display: block !important;
+          }
+          body {
+            font-size: 0.875rem;
+          }
+          h1 {
+            font-size: 1.75rem !important;
+            line-height: 1.2 !important;
+          }
+          h2 {
+            font-size: 1.5rem !important;
+          }
+          h3 {
+            font-size: 1.25rem !important;
+          }
+          .hero-image {
+            width: 16rem !important;
+            height: 16rem !important;
+          }
+          .section-padding {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            padding-top: 4rem !important;
+            padding-bottom: 3rem !important;
+          }
+          .text-lg {
+            font-size: 1rem !important;
+          }
+        }
+        
+        @media (min-width: 769px) {
+          .nav-links {
+            display: flex !important;
+          }
+          .mobile-menu-btn {
+            display: none !important;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          h1 {
+            font-size: 3rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
