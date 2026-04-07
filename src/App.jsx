@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Phone, ExternalLink, ChevronRight, Download, MapPin, Award, Briefcase, GraduationCap, Menu, X } from 'lucide-react';
+import resume from './assets/My Resume.pdf';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -167,7 +168,7 @@ function App() {
                 <a href="#projects" style={{ background: 'linear-gradient(to right, #2563eb, #9333ea)', color: 'white', padding: '1rem 2rem', borderRadius: '0.75rem', fontWeight: '600', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', transition: 'all 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 0 20px rgba(37, 99, 235, 0.4)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}>
                   View My Work <ChevronRight style={{ marginLeft: '0.5rem', width: '1.25rem', height: '1.25rem' }} />
                 </a>
-                <a href="#" style={{ border: '2px solid #cbd5e1', color: '#334155', padding: '1rem 2rem', borderRadius: '0.75rem', fontWeight: '600', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', transition: 'all 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#3b82f6'; e.currentTarget.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#cbd5e1'; e.currentTarget.style.color = '#334155'; }}>
+                <a href={resume} download="Ritik_Sharma_Resume.pdf" style={{ border: '2px solid #cbd5e1', color: '#334155', padding: '1rem 2rem', borderRadius: '0.75rem', fontWeight: '600', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', transition: 'all 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#3b82f6'; e.currentTarget.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#cbd5e1'; e.currentTarget.style.color = '#334155'; }}>
                   <Download style={{ marginRight: '0.5rem', width: '1.25rem', height: '1.25rem' }} /> Download Resume
                 </a>
               </div>
