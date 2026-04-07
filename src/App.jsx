@@ -225,7 +225,7 @@ function App() {
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}> <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold', marginBottom: '1.5rem', background: 'linear-gradient(to right, #2563eb, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent', WebkitTextFillColor: 'transparent' }}>Featured Projects</h2><p style={{ fontSize: '1.25rem', color: '#475569', maxWidth: '48rem', margin: '0 auto', lineHeight: '1.5' }}>A showcase of my recent work demonstrating expertise in AI/ML and full-stack development</p></div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
             {projects.map((project, index) => (
-              <div key={index} style={{ backgroundColor: 'white', padding: '2rem', borderRadius: '1.875rem', boxShadow: '0 10px 15px rgba(0, 0, 0, 0.05)', border: '1px solid #e2e8f0', position: 'relative', transition: 'all 0.5s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 20px 25px rgba(37, 99, 235, 0.1)'; e.currentTarget.style.transform = 'translateY(-8px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+              <div key={index} style={{ backgroundColor: 'white', padding: '2rem', borderRadius: '1.875rem', border: '1px solid #e2e8f0', position: 'relative', transition: 'all 0.5s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-8px)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
                   <div style={{ flex: 1 }}>
                     <h3 style={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#0f172a', marginBottom: '0.75rem' }}>{project.title}</h3>
@@ -249,7 +249,7 @@ function App() {
             ))}
           </div>
           <div style={{ textAlign: 'center' }}>
-            <a href="https://github.com/keshavs07" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', padding: '1rem 2rem', background: 'linear-gradient(to right, #1f2937, #111827)', color: 'white', borderRadius: '0.75rem', fontWeight: '600', textDecoration: 'none', cursor: 'pointer', transition: 'all 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 20px 25px rgba(0, 0, 0, 0.2)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+            <a href="https://github.com/keshavs07" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', padding: '1rem 2rem', background: 'linear-gradient(to right, #1f2937, #111827)', color: 'white', borderRadius: '0.75rem', fontWeight: '600', textDecoration: 'none', cursor: 'pointer', transition: 'all 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; }}>
               <Github style={{ width: '1.25rem', height: '1.25rem', marginRight: '0.75rem' }} />View All Projects on GitHub
             </a>
           </div>
