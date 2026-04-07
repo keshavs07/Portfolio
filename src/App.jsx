@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Github, Linkedin, Mail, Phone, ExternalLink, ChevronRight, Download, MapPin, Award, Briefcase, GraduationCap, Menu, X } from 'lucide-react';
+import React from 'react';
+import { Github, Linkedin, Mail, Phone, ExternalLink, ChevronRight, Download, MapPin, Award, Briefcase, GraduationCap } from 'lucide-react';
 import resume from './assets/My Resume.pdf';
+import profileImage from './assets/WhatsApp Image 2026-04-07 at 1.15.30 PM.jpeg';
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const projects = [
     {
       title: "Mental Health Companion",
@@ -118,30 +118,19 @@ function App() {
   return (
     <div style={{ minHeight: '100vh', background: 'linear-gradient(to bottom right, #f8fafc, #ffffff, #eff6ff)', fontFamily: 'sans-serif', color: '#0f172a', paddingBottom: '6rem' }}>
       <nav style={{ position: 'fixed', width: '100%', top: 0, left: 0, background: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(12px)', zIndex: 50, borderBottom: '1px solid rgba(203, 213, 225, 0.5)', boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)' }}>
-        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ fontSize: '1.5rem', fontWeight: 'bold', background: 'linear-gradient(to right, #2563eb, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent', WebkitTextFillColor: 'transparent' }}>
-            RS
+        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '0.75rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }} className="nav-container">
+          <div style={{ fontSize: '1.5rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <img src={profileImage} alt="Logo" style={{ width: '1.5rem', height: '1.5rem', borderRadius: '50%', objectFit: 'cover' }} />
+            <span style={{ background: 'linear-gradient(to right, #2563eb, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent', WebkitTextFillColor: 'transparent' }}>RS</span>
           </div>
-          <button onClick={() => setMenuOpen(!menuOpen)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: '#475569' }} className="mobile-menu-btn">
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-          <div style={{ display: 'flex', gap: '2rem', fontSize: '0.875rem', fontWeight: '500' }} className="nav-links">
+          <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.875rem', fontWeight: '500', flexWrap: 'wrap', justifyContent: 'center' }} className="nav-links">
             {['about', 'experience', 'projects', 'skills', 'contact'].map((section) => (
-              <a key={section} href={`#${section}`} onClick={() => setMenuOpen(false)} style={{ color: '#475569', textDecoration: 'none' }} onMouseEnter={(e) => { e.target.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.target.style.color = '#475569'; }}>
+              <a key={section} href={`#${section}`} style={{ color: '#475569', textDecoration: 'none' }} onMouseEnter={(e) => { e.target.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.target.style.color = '#475569'; }}>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </a>
             ))}
           </div>
         </div>
-        {menuOpen && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1.5rem', background: 'rgba(255, 255, 255, 0.95)', borderTop: '1px solid rgba(203, 213, 225, 0.5)' }}>
-            {['about', 'experience', 'projects', 'skills', 'contact'].map((section) => (
-              <a key={section} href={`#${section}`} onClick={() => setMenuOpen(false)} style={{ color: '#475569', textDecoration: 'none', fontSize: '1rem' }} onMouseEnter={(e) => { e.target.style.color = '#2563eb'; }} onMouseLeave={(e) => { e.target.style.color = '#475569'; }}>
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </a>
-            ))}
-          </div>
-        )}
       </nav>
 
       <section id="about" style={{ position: 'relative', paddingTop: '8rem', paddingBottom: '5rem', paddingLeft: '1.5rem', paddingRight: '1.5rem', overflow: 'hidden' }}>
@@ -184,21 +173,15 @@ function App() {
               </div>
             </div>
 
-            <div style={{ position: 'relative' }}>
-              <div style={{ position: 'relative', width: '24rem', height: '24rem', margin: '0 auto' }}>
+            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', width: '100%' }}>
+              <div style={{ position: 'relative', width: '100%', maxWidth: '24rem', aspectRatio: '1 / 1', margin: '0 auto' }} className="hero-image-container">
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom right, #60a5fa, #a855f7, #ec4899)', borderRadius: '1.5rem', transform: 'rotate(6deg)', boxShadow: '0 20px 25px rgba(0, 0, 0, 0.1)' }} />
-                <div style={{ position: 'relative', background: 'linear-gradient(to bottom right, #3b82f6, #7c3aed)', borderRadius: '1.5rem', padding: '2rem', boxShadow: '0 20px 25px rgba(0, 0, 0, 0.1)', transform: 'rotate(-3deg)', transition: 'transform 0.5s' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'rotate(0)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'rotate(-3deg)'; }}>
-                  <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '2rem', boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.05)' }}>
-                    <div style={{ width: '12rem', height: '12rem', margin: '0 auto', background: 'linear-gradient(to bottom right, #dbeafe, #f3e8ff)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)' }}>
-                      <span style={{ fontSize: '3.75rem', fontWeight: 'bold', background: 'linear-gradient(to right, #2563eb, #9333ea)', WebkitBackgroundClip: 'text', color: 'transparent', WebkitTextFillColor: 'transparent' }}>RS</span>
+                <div style={{ position: 'relative', background: 'linear-gradient(to bottom right, #3b82f6, #7c3aed)', borderRadius: '1.5rem', padding: '1rem', boxShadow: '0 20px 25px rgba(0, 0, 0, 0.1)', transform: 'rotate(-3deg)', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                  <div style={{ backgroundColor: 'white', borderRadius: '1rem', padding: '1rem', boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.05)', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '100%', height: '100%', background: 'linear-gradient(to bottom right, #dbeafe, #f3e8ff)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)', overflow: 'hidden' }}>
+                      <img src={profileImage} alt="Ritik Sharma" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                   </div>
-                </div>
-                <div style={{ position: 'absolute', top: '-1rem', right: '-1rem', width: '4rem', height: '4rem', backgroundColor: '#facc15', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', fontSize: '1.5rem', animation: 'bounce 1s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}>
-                  🚀
-                </div>
-                <div style={{ position: 'absolute', bottom: '-1rem', left: '-1rem', width: '4rem', height: '4rem', backgroundColor: '#22c55e', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', fontSize: '1.5rem', animation: 'bounce 1s cubic-bezier(0.4, 0, 0.6, 1) infinite 1s' }}>
-                  💡
                 </div>
               </div>
             </div>
@@ -288,13 +271,13 @@ function App() {
               ];
               const color = colors[categoryIndex % colors.length];
               return (
-                <div key={category} style={{ backgroundColor: 'white', padding: '2rem', borderRadius: '1.875rem', boxShadow: '0 10px 15px rgba(0, 0, 0, 0.05)', border: '1px solid #e2e8f0', transition: 'all 0.5s', cursor: 'pointer', position: 'relative' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 20px 25px rgba(37, 99, 235, 0.1)'; e.currentTarget.style.transform = 'translateY(-8px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                  <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                <div key={category} style={{ backgroundColor: 'white', padding: '2rem', borderRadius: '1.875rem', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.03)', border: '1px solid #e2e8f0', transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', cursor: 'pointer', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: '100%' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)'; e.currentTarget.style.transform = 'translateY(-8px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.03)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                  <div style={{ textAlign: 'center', marginBottom: '2rem', position: 'relative', zIndex: 1 }}>
                     <div style={{ width: '4rem', height: '4rem', margin: '0 auto 1rem', borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', background: color.bg, fontSize: '1.5rem' }}>{color.emoji}</div>
                     <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '0.5rem' }}>{category}</h3>
                     <div style={{ height: '0.25rem', width: '3rem', margin: '0 auto', backgroundColor: color.accent, borderRadius: '9999px' }} />
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', flexGrow: 1, position: 'relative', zIndex: 1 }}>
                     {items.map((skill, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'center', padding: '0.75rem', backgroundColor: '#f1f5f9', borderRadius: '0.75rem', transition: 'all 0.3s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#e2e8f0'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#f1f5f9'; }}>
                         <div style={{ width: '0.75rem', height: '0.75rem', borderRadius: '50%', marginRight: '0.75rem', backgroundColor: color.accent, flexShrink: 0 }} />
@@ -302,7 +285,7 @@ function App() {
                       </div>
                     ))}
                   </div>
-                  <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', width: '6rem', height: '6rem', borderRadius: '50%', opacity: 0.1, pointerEvents: 'none', background: color.accent }} />
+                  <div style={{ position: 'absolute', top: '-2rem', right: '-2rem', width: '10rem', height: '10rem', borderRadius: '50%', opacity: 0.05, pointerEvents: 'none', background: color.accent, zIndex: 0 }} />
                 </div>
               );
             })}
@@ -395,7 +378,7 @@ function App() {
 
           <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '3rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <p style={{ color: '#94a3b8' }}>© 2026 Ritik Sharma. Crafted with ❤️ using React & Inline Styles</p>
+              <p style={{ color: '#94a3b8' }}>© 2026 Ritik Sharma.</p>
               <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', fontSize: '0.875rem', color: '#94a3b8', flexWrap: 'wrap' }}>
                 <a href="#about" style={{ textDecoration: 'none', color: '#94a3b8', cursor: 'pointer' }} onMouseEnter={(e) => { e.target.style.color = 'white'; }} onMouseLeave={(e) => { e.target.style.color = '#94a3b8'; }}>About</a>
                 <a href="#projects" style={{ textDecoration: 'none', color: '#94a3b8', cursor: 'pointer' }} onMouseEnter={(e) => { e.target.style.color = 'white'; }} onMouseLeave={(e) => { e.target.style.color = '#94a3b8'; }}>Projects</a>
@@ -421,11 +404,11 @@ function App() {
         }
         
         @media (max-width: 768px) {
-          .nav-links {
-            display: none !important;
+          .nav-container {
+            justify-content: center !important;
           }
-          .mobile-menu-btn {
-            display: block !important;
+          .nav-links {
+            gap: 1rem !important;
           }
           body {
             font-size: 0.875rem;
@@ -452,15 +435,6 @@ function App() {
           }
           .text-lg {
             font-size: 1rem !important;
-          }
-        }
-        
-        @media (min-width: 769px) {
-          .nav-links {
-            display: flex !important;
-          }
-          .mobile-menu-btn {
-            display: none !important;
           }
         }
         
