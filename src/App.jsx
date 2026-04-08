@@ -111,7 +111,7 @@ function App() {
 
   const socialLinks = [
     { icon: Github, url: 'https://github.com/keshavs07' },
-    { icon: Linkedin, url: 'https://www.linkedin.com/' },
+    { icon: Linkedin, url: 'https://www.linkedin.com/in/ritik-sharma-799b55248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
     { icon: Mail, url: 'mailto:keshavs424@gmail.com' }
   ];
 
