@@ -9,28 +9,28 @@ function App() {
       title: "Mental Health Companion",
       description: "Developed an AI-powered chatbot with advanced emotion detection and sentiment analysis capabilities, helping users manage mental wellness through intelligent conversations.",
       tech: ["NLP", "Python", "AI Chatbot", "TensorFlow"],
-      link: "https://github.com/keshavs07",
+      link: "https://github.com/keshavs07/MentalHealthApp",
       impact: "Reduced response time by 60% compared to traditional chatbots"
     },
     {
       title: "Driver Safety AI",
       description: "Engineered a real-time drowsiness detection system utilizing MediaPipe and OpenCV for enhanced road safety, processing video streams at 30 FPS.",
       tech: ["MediaPipe", "OpenCV", "Python", "Computer Vision"],
-      link: "https://github.com/keshavs07",
+      link: "https://github.com/keshavs07/Driver-Safety-AI",
       impact: "Achieved 94% accuracy in drowsiness detection"
     },
     {
       title: "Smart News Verifier",
       description: "Built a comprehensive fake news detection tool employing Natural Language Processing, OCR, and Machine Learning algorithms to verify news authenticity.",
       tech: ["NLP", "OCR", "Machine Learning", "Scikit-learn"],
-      link: "https://github.com/keshavs07",
+      link: "https://github.com/keshavs07/SmartNewsVerifier",
       impact: "Processed 10,000+ articles with 89% accuracy"
     },
     {
       title: "Crop Health AI",
       description: "Created a plant disease detection system based on the highly efficient YOLO architecture, enabling farmers to identify crop diseases early.",
       tech: ["YOLOv8", "Computer Vision", "Python", "PyTorch"],
-      link: "https://github.com/keshavs07",
+      link: "https://github.com/keshavs07/crop-health-ai.git",
       impact: "Identified 15+ crop diseases with 92% precision"
     },
     {
@@ -244,7 +244,7 @@ function App() {
                     <span key={i} style={{ padding: '0.5rem 1rem', background: 'linear-gradient(to right, #f0f4ff, #faf5ff)', color: '#1e40af', borderRadius: '9999px', fontSize: '0.875rem', fontWeight: '500', border: '1px solid #dbeafe' }}>{t}</span>
                   ))}
                 </div>
-                <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', width: '5rem', height: '5rem', background: 'linear-gradient(to bottom right, #dbeafe, #e9d5ff)', borderRadius: '50%', opacity: 0.2, pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', top: '1rem', right: '1rem', width: '5rem', height: '5rem', background: 'linear-gradient(to bottom right, #dbeafe, #e9d5ff)', borderRadius: '50%', opacity: 0.2, pointerEvents: 'none' }} />
               </div>
             ))}
           </div>
